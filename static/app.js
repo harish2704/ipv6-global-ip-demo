@@ -46,8 +46,7 @@ var app = new Vue({
           this.ips = res.ips;
         })
         .catch( res =>{
-          console.log( res );
-          // alert( res.error )
+          alert( res.error )
         });
     }
   }

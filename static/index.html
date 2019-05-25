@@ -5,11 +5,19 @@
     <title>IPV6 global ip test</title>
   </head>
   <body>
+    <h2>What is this?</h2>
+    <pre>
+      * List of public IPv6 IP assigned to the currently running server is shown below.
+      * We can click on each link and verify whether that IP is globally accessible or not by visiting the link
+      * Optionally, we can add new public IPv6 address using the form displayed in the bottom.
+      * Newly added IP will only persist for one minute. It will be removed after that.
+      * Please note that, we are only allowed change last 64 bits of existing global ip. Otherwise it won't work
+    </pre>
     <div id="app">
       <h3>List of global IPv6 address assigned to this server</h3>
       <ul id="cont-ip-list">
         <li v-for="ip in ips">
-          <a :href="'http://[' + ip + ']:3553'">
+          <a target="_blank" :href="'http://[' + ip + ']:3553'">
           {{ ip }}
           </a>
         </li>
