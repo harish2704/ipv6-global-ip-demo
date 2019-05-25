@@ -1,0 +1,16 @@
+{
+  "name": "ipv6-global-ip-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Harish Karumuthil<harish2704@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-joi-router": "^6.0.0",
+    "koa-static": "^5.0.0",
+    "rate-limiter-flexible": "^1.0.1"
+  },
+  "scripts": {
+    "server": "node index.js"
+  }
+}
