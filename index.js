@@ -87,7 +87,7 @@ async function addIp( ctx ){
   // Remove ip after some time
   setTimeout(function(){
     exec(`sudo ip -6 a del dev ${ethDev} ${ip}/64`);
-  },60*1000 );
+  }, 5*60*1000 );
 
   const ips = await exec(`ip -6  a show dev ${ethDev}| grep inet6.*global | awk '{print $2}'`);
   ctx.body = { ips : ips.split('\n').filter(v => v.length ).map( v => v.slice(0, -3)) };
@@ -98,7 +98,7 @@ async function logger( ctx, next ){
   const startTime = Date.now();
   await next();
   const requestTime = Date.now() - startTime;
-  console.log(`${ctx.method} ${ctx.response.status} ${ctx.ip} "${ctx.request.headers['user-agent']}" - ${requestTime}`);
+  console.log(`${new Date().toISOString()} ${ctx.method} ${ctx.response.status} ${ctx.ip} "${ctx.request.headers['user-agent']}" - ${requestTime}`);
 }
 
 

@@ -20,7 +20,7 @@ function api( method, url, data ){
         return response.json();
       }
       return response.json().then( v =>{
-        throw v;
+        alert( v.error );
       });
     });
 }
@@ -45,9 +45,6 @@ var app = new Vue({
         .then( res =>{
           this.ips = res.ips;
         })
-        .catch( res =>{
-          alert( res.error )
-        });
     }
   }
 });
